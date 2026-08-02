@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-30T02:53:39.713691+00:00",
+  "timestamp": "2026-08-02T03:35:36.055202+00:00",
   "repo": "thunderpoot/readability-draft",
   "labels": [
     {
@@ -337,5 +337,32 @@
       "comments": []
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 14,
+      "id": "PR_kwDOTI7wBc74u3O8",
+      "title": "Update draft-vaughan-machine-readability.md",
+      "url": "https://github.com/thunderpoot/readability-draft/pull/14",
+      "state": "OPEN",
+      "author": "Starl3n",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Various suggested additions based on things I've come to consider as important for what can become 'knowable' with the benefit of verifiable claims.",
+      "createdAt": "2026-07-30T21:16:29Z",
+      "updatedAt": "2026-07-30T21:16:30Z",
+      "baseRepository": "thunderpoot/readability-draft",
+      "baseRefName": "main",
+      "baseRefOid": "d5907f32212fa7452d17a4e12ffc3a30b447b4ee",
+      "headRepository": "Starl3n/readability-draft",
+      "headRefName": "patch-1",
+      "headRefOid": "7b3648a6e4a49c1f2856c27aadcb6348d44001ed",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
