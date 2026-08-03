@@ -35,7 +35,7 @@ terms of service.
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.10.1
+    platformdirs 4.11.0
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
@@ -75,7 +75,6 @@ terms of service.
   src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-
 @font-face {
   font-family: 'Lora';
   font-style: italic;
@@ -124,7 +123,6 @@ terms of service.
   src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 @font-face {
   font-family: 'Lora';
   font-style: normal;
@@ -189,7 +187,6 @@ terms of service.
   font-display: swap;
   src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 }
 
 @font-face {
@@ -1058,11 +1055,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Machine Readability</td>
-<td class="right">July 2026</td>
+<td class="right">August 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Vaughan</td>
-<td class="center">Expires 26 January 2027</td>
+<td class="center">Expires 4 February 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1075,12 +1072,12 @@ svg {
 <dd class="internet-draft">draft-vaughan-machine-readability-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-07-25" class="published">25 July 2026</time>
+<time datetime="2026-08-03" class="published">3 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-01-26">26 January 2027</time></dd>
+<dd class="expires"><time datetime="2027-02-04">4 February 2027</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1136,7 +1133,7 @@ terms of service.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 26 January 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 4 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1305,17 +1302,17 @@ terms of service.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
         <dd class="break"></dd>
 <dt id="section-2-1.5">Resource:</dt>
         <dd style="margin-left: 1.5em" id="section-2-1.6">
-          <p id="section-2-1.6.1">The content or asset to which an Expression pertains.<a href="#section-2-1.6.1" class="pilcrow">¶</a></p>
+          <p id="section-2-1.6.1">The content or asset to which an Expression pertains.  The relation is not one-to-one in either direction: a single Expression may pertain to many Resources, as a robots.txt file does, and a single Resource may be covered by several independent Expressions, possibly under different Mechanisms and for different purposes.<a href="#section-2-1.6.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-1.7">Declaring Party:</dt>
         <dd style="margin-left: 1.5em" id="section-2-1.8">
-          <p id="section-2-1.8.1">The entity asserting an Expression.<a href="#section-2-1.8.1" class="pilcrow">¶</a></p>
+          <p id="section-2-1.8.1">The entity that publishes an Expression and stands behind the assertions it carries.<a href="#section-2-1.8.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 <dt id="section-2-1.9">Mechanism:</dt>
         <dd style="margin-left: 1.5em" id="section-2-1.10">
-          <p id="section-2-1.10.1">A specification or convention (a protocol, vocabulary, or metadata scheme, for instance) under which Expressions are produced.  The properties defined in <a href="#criteria" class="auto internal xref">Section 3</a> apply to individual Expressions; a Mechanism is assessed indirectly, through the properties that Expressions produced under it are able to satisfy.  Statements of the form "TDMRep is parseable" are shorthand for this.<a href="#section-2-1.10.1" class="pilcrow">¶</a></p>
+          <p id="section-2-1.10.1">A specification or convention (a protocol, vocabulary, or metadata scheme, for instance) under which Expressions are produced.  The properties defined in <a href="#criteria" class="auto internal xref">Section 3</a> apply to individual Expressions; a Mechanism is assessed indirectly, through the properties that Expressions produced under it are able to satisfy.  Statements of the form "TDMRep is parseable" are shorthand for this.  The shorthand does not run in reverse: an Expression produced under a Mechanism satisfies a property only if it does so itself.  A syntactically invalid robots.txt file is not parseable, an Expression left unsigned under a Mechanism whose signing is optional is not verifiable, and an Expression served from an unadvertised path is not discoverable, whatever the Mechanism provides for.<a href="#section-2-1.10.1" class="pilcrow">¶</a></p>
 </dd>
       <dd class="break"></dd>
 </dl>
@@ -1364,7 +1361,7 @@ terms of service.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
           <h4 id="name-discoverable">
 <a href="#section-3.2.1" class="section-number selfRef">3.2.1. </a><a href="#name-discoverable" class="section-name selfRef">Discoverable</a>
           </h4>
-<p id="section-3.2.1-1">An Expression is discoverable if an Agent can locate it from the Resource, or from the act of acquiring the Resource, without out-of-band knowledge specific to the Declaring Party. A test would be whether the Agent can find the Expression, when given only the Resource's identifier and a general method.  A robots.txt file passes this test (fixed path, fetched first).  A terms page linked only from a human-readable footer fails.  The "without out-of-band knowledge" clause is what excludes something like "email us for our API terms".  Discoverability is a property of deployment rather than of the artefact: the same file is discoverable at a well-known location and undiscoverable behind an unadvertised path, without a byte of it changing.<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.1-1">An Expression is discoverable if an Agent can locate it from the Resource, or from the act of acquiring the Resource, without out-of-band knowledge specific to the Declaring Party. A test would be whether the Agent can find the Expression, when given only the Resource's identifier and a general method.  A robots.txt file passes this test (fixed path, fetched first).  A terms page linked only from a human-readable footer fails.  The "without out-of-band knowledge" clause is what excludes something like "email us for our API terms".  An Expression embedded within the Resource, or one that is itself the Resource, satisfies the test where it is present, since the act of acquiring the Resource yields the Expression with it.  Discoverability is a property of deployment rather than of the artefact: the same file is discoverable at a well-known location and undiscoverable behind an unadvertised path, without a byte of it changing.<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="actionable">
@@ -1382,7 +1379,7 @@ terms of service.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
           <h4 id="name-verifiable">
 <a href="#section-3.2.3" class="section-number selfRef">3.2.3. </a><a href="#name-verifiable" class="section-name selfRef">Verifiable</a>
           </h4>
-<p id="section-3.2.3-1">An Expression is verifiable if an Agent can establish that it genuinely originates from a party authorised to make assertions about the Resource, and that it has not been altered.  A test for this could be whether there is a mechanism binding the Expression to an authorised Declaring Party and detecting tampering.  Verifiability is independent of the rest: an Expression may be signed and bound to its Declaring Party while remaining prose no machine can act on, and a perfectly interpretable Expression may carry no evidence of origin at all.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.2.3-1">An Expression is verifiable if an Agent can establish that it genuinely originates from a party authorised to make assertions about the Resource, and that it has not been altered.  A test for this could be whether there is a mechanism binding the Expression to an authorised Declaring Party and detecting tampering.  The definition has two limbs, authority and integrity, and they are separable: a mechanism may prove that an Expression is unaltered since signing without establishing that the signer was entitled to speak for the Resource, a distinction drawn out in the discussion of C2PA (<a href="#existing" class="auto internal xref">Section 6</a>).  Verifiability is independent of the rest: an Expression may be signed and bound to its Declaring Party while remaining prose no machine can act on, and a perfectly interpretable Expression may carry no evidence of origin at all.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
 <p id="section-3.2.3-2">There is a weak, implicit form of provenance short of this.  A Mechanism served from a well-known location, like robots.txt or TDMRep's <code>/.well-known/tdmrep.json</code>, carries some evidence of origin in the act of publication itself, since placing a file at that path is something only a party controlling the origin can do.  This is an assurance about who is speaking, to the extent that control of a domain identifies a party; it says nothing about the clarity or validity of what is said.  It also attaches to the act of serving rather than to the Expression, and so it neither survives redistribution of the Resource nor detects alteration.<a href="#section-3.2.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1617,6 +1614,18 @@ terms of service.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-A.1-1.1">
             <p id="appendix-A.1-1.1.1">Added further acknowledgements.<a href="#appendix-A.1-1.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-1.2">
+            <p id="appendix-A.1-1.2.1">Clarified in the Terminology that the Expression-Resource relation is many-to-many in both directions, and reworded the Declaring Party definition to distinguish publishing an Expression from the assertions it carries.  (Issue #11.)<a href="#appendix-A.1-1.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-1.3">
+            <p id="appendix-A.1-1.3.1">Noted at the Mechanism definition that the shorthand does not run in reverse: an Expression satisfies a property only if it does so itself.  (Issue #11.)<a href="#appendix-A.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-1.4">
+            <p id="appendix-A.1-1.4.1">Made explicit in <a href="#discoverable" class="auto internal xref">Section 3.2.1</a> that an Expression embedded in, or constituting, the Resource satisfies the discoverability test where present.  (Issue #11.)<a href="#appendix-A.1-1.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="appendix-A.1-1.5">
+            <p id="appendix-A.1-1.5.1">Noted in <a href="#verifiable" class="auto internal xref">Section 3.2.3</a> that the authority and integrity limbs of verifiability are separable.  (Issue #11.)<a href="#appendix-A.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>

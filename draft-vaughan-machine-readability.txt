@@ -4,8 +4,8 @@
 
 Network Working Group                                         T. Vaughan
 Internet-Draft                                   Common Crawl Foundation
-Intended status: Informational                              25 July 2026
-Expires: 26 January 2027
+Intended status: Informational                             3 August 2026
+Expires: 4 February 2027
 
 
 Defining Machine Readability for Usage Preferences and Policy Expression
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 January 2027.
+   This Internet-Draft will expire on 4 February 2027.
 
 Copyright Notice
 
@@ -186,9 +186,15 @@ Table of Contents
       itself.  The Expression is the artefact rather than the assertions
       it carries; a single Expression may convey one statement or many.
 
-   Resource:  The content or asset to which an Expression pertains.
+   Resource:  The content or asset to which an Expression pertains.  The
+      relation is not one-to-one in either direction: a single
+      Expression may pertain to many Resources, as a robots.txt file
+      does, and a single Resource may be covered by several independent
+      Expressions, possibly under different Mechanisms and for different
+      purposes.
 
-   Declaring Party:  The entity asserting an Expression.
+   Declaring Party:  The entity that publishes an Expression and stands
+      behind the assertions it carries.
 
    Mechanism:  A specification or convention (a protocol, vocabulary, or
       metadata scheme, for instance) under which Expressions are
@@ -196,7 +202,13 @@ Table of Contents
       Expressions; a Mechanism is assessed indirectly, through the
       properties that Expressions produced under it are able to satisfy.
       Statements of the form "TDMRep is parseable" are shorthand for
-      this.
+      this.  The shorthand does not run in reverse: an Expression
+      produced under a Mechanism satisfies a property only if it does so
+      itself.  A syntactically invalid robots.txt file is not parseable,
+      an Expression left unsigned under a Mechanism whose signing is
+      optional is not verifiable, and an Expression served from an
+      unadvertised path is not discoverable, whatever the Mechanism
+      provides for.
 
 3.  Criteria for Machine Readability
 
@@ -295,6 +307,9 @@ Table of Contents
    this test (fixed path, fetched first).  A terms page linked only from
    a human-readable footer fails.  The "without out-of-band knowledge"
    clause is what excludes something like "email us for our API terms".
+   An Expression embedded within the Resource, or one that is itself the
+   Resource, satisfies the test where it is present, since the act of
+   acquiring the Resource yields the Expression with it.
    Discoverability is a property of deployment rather than of the
    artefact: the same file is discoverable at a well-known location and
    undiscoverable behind an unadvertised path, without a byte of it
@@ -332,11 +347,15 @@ Table of Contents
    genuinely originates from a party authorised to make assertions about
    the Resource, and that it has not been altered.  A test for this
    could be whether there is a mechanism binding the Expression to an
-   authorised Declaring Party and detecting tampering.  Verifiability is
-   independent of the rest: an Expression may be signed and bound to its
-   Declaring Party while remaining prose no machine can act on, and a
-   perfectly interpretable Expression may carry no evidence of origin at
-   all.
+   authorised Declaring Party and detecting tampering.  The definition
+   has two limbs, authority and integrity, and they are separable: a
+   mechanism may prove that an Expression is unaltered since signing
+   without establishing that the signer was entitled to speak for the
+   Resource, a distinction drawn out in the discussion of C2PA
+   (Section 6).  Verifiability is independent of the rest: an Expression
+   may be signed and bound to its Declaring Party while remaining prose
+   no machine can act on, and a perfectly interpretable Expression may
+   carry no evidence of origin at all.
 
    There is a weak, implicit form of provenance short of this.  A
    Mechanism served from a well-known location, like robots.txt or
@@ -822,6 +841,22 @@ Change Log
 Since draft-vaughan-machine-readability-01
 
    *  Added further acknowledgements.
+
+   *  Clarified in the Terminology that the Expression-Resource relation
+      is many-to-many in both directions, and reworded the Declaring
+      Party definition to distinguish publishing an Expression from the
+      assertions it carries.  (Issue #11.)
+
+   *  Noted at the Mechanism definition that the shorthand does not run
+      in reverse: an Expression satisfies a property only if it does so
+      itself.  (Issue #11.)
+
+   *  Made explicit in Section 3.2.1 that an Expression embedded in, or
+      constituting, the Resource satisfies the discoverability test
+      where present.  (Issue #11.)
+
+   *  Noted in Section 3.2.3 that the authority and integrity limbs of
+      verifiability are separable.  (Issue #11.)
 
 Since draft-vaughan-machine-readability-00
 
