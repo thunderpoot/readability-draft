@@ -156,13 +156,13 @@ Expression:
 : A concrete artefact (for instance: a file, header, embedded block, or metadata record) that conveys structured information.  This document is concerned in particular with Expressions that convey preferences, rights, terms, or other policies about a Resource, but the framework does not depend on that subject matter, and the Expression may even be the Resource itself.  The Expression is the artefact rather than the assertions it carries; a single Expression may convey one statement or many.
 
 Resource:
-: The content or asset to which an Expression pertains.
+: The content or asset to which an Expression pertains.  The relation is not one-to-one in either direction: a single Expression may pertain to many Resources, as a robots.txt file does, and a single Resource may be covered by several independent Expressions, possibly under different Mechanisms and for different purposes.
 
 Declaring Party:
-: The entity asserting an Expression.
+: The entity that publishes an Expression and stands behind the assertions it carries.
 
 Mechanism:
-: A specification or convention (a protocol, vocabulary, or metadata scheme, for instance) under which Expressions are produced.  The properties defined in {{criteria}} apply to individual Expressions; a Mechanism is assessed indirectly, through the properties that Expressions produced under it are able to satisfy.  Statements of the form "TDMRep is parseable" are shorthand for this.
+: A specification or convention (a protocol, vocabulary, or metadata scheme, for instance) under which Expressions are produced.  The properties defined in {{criteria}} apply to individual Expressions; a Mechanism is assessed indirectly, through the properties that Expressions produced under it are able to satisfy.  Statements of the form "TDMRep is parseable" are shorthand for this.  The shorthand does not run in reverse: an Expression produced under a Mechanism satisfies a property only if it does so itself.  A syntactically invalid robots.txt file is not parseable, an Expression left unsigned under a Mechanism whose signing is optional is not verifiable, and an Expression served from an unadvertised path is not discoverable, whatever the Mechanism provides for.
 
 # Criteria for Machine Readability {#criteria}
 
@@ -190,7 +190,7 @@ The three dimensions below are not further degrees of the core criteria, and the
 
 ### Discoverable {#discoverable}
 
-An Expression is discoverable if an Agent can locate it from the Resource, or from the act of acquiring the Resource, without out-of-band knowledge specific to the Declaring Party. A test would be whether the Agent can find the Expression, when given only the Resource's identifier and a general method.  A robots.txt file passes this test (fixed path, fetched first).  A terms page linked only from a human-readable footer fails.  The "without out-of-band knowledge" clause is what excludes something like "email us for our API terms".  Discoverability is a property of deployment rather than of the artefact: the same file is discoverable at a well-known location and undiscoverable behind an unadvertised path, without a byte of it changing.
+An Expression is discoverable if an Agent can locate it from the Resource, or from the act of acquiring the Resource, without out-of-band knowledge specific to the Declaring Party. A test would be whether the Agent can find the Expression, when given only the Resource's identifier and a general method.  A robots.txt file passes this test (fixed path, fetched first).  A terms page linked only from a human-readable footer fails.  The "without out-of-band knowledge" clause is what excludes something like "email us for our API terms".  An Expression embedded within the Resource, or one that is itself the Resource, satisfies the test where it is present, since the act of acquiring the Resource yields the Expression with it.  Discoverability is a property of deployment rather than of the artefact: the same file is discoverable at a well-known location and undiscoverable behind an unadvertised path, without a byte of it changing.
 
 ### Actionable {#actionable}
 
@@ -202,7 +202,7 @@ Unlike the core criteria, actionability is not intrinsic to the Expression: it i
 
 ### Verifiable {#verifiable}
 
-An Expression is verifiable if an Agent can establish that it genuinely originates from a party authorised to make assertions about the Resource, and that it has not been altered.  A test for this could be whether there is a mechanism binding the Expression to an authorised Declaring Party and detecting tampering.  Verifiability is independent of the rest: an Expression may be signed and bound to its Declaring Party while remaining prose no machine can act on, and a perfectly interpretable Expression may carry no evidence of origin at all.
+An Expression is verifiable if an Agent can establish that it genuinely originates from a party authorised to make assertions about the Resource, and that it has not been altered.  A test for this could be whether there is a mechanism binding the Expression to an authorised Declaring Party and detecting tampering.  The definition has two limbs, authority and integrity, and they are separable: a mechanism may prove that an Expression is unaltered since signing without establishing that the signer was entitled to speak for the Resource, a distinction drawn out in the discussion of C2PA ({{existing}}).  Verifiability is independent of the rest: an Expression may be signed and bound to its Declaring Party while remaining prose no machine can act on, and a perfectly interpretable Expression may carry no evidence of origin at all.
 
 There is a weak, implicit form of provenance short of this.  A Mechanism served from a well-known location, like robots.txt or TDMRep's `/.well-known/tdmrep.json`, carries some evidence of origin in the act of publication itself, since placing a file at that path is something only a party controlling the origin can do.  This is an assurance about who is speaking, to the extent that control of a domain identifies a party; it says nothing about the clarity or validity of what is said.  It also attaches to the act of serving rather than to the Expression, and so it neither survives redistribution of the Resource nor detects alteration.
 
@@ -308,6 +308,10 @@ The author thanks Pedro Ortiz Suarez, Erin Simon, Christopher Flammang, Mark Cle
 {:numbered="false"}
 
 - Added further acknowledgements.
+- Clarified in the Terminology that the Expression-Resource relation is many-to-many in both directions, and reworded the Declaring Party definition to distinguish publishing an Expression from the assertions it carries.  (Issue #11.)
+- Noted at the Mechanism definition that the shorthand does not run in reverse: an Expression satisfies a property only if it does so itself.  (Issue #11.)
+- Made explicit in {{discoverable}} that an Expression embedded in, or constituting, the Resource satisfies the discoverability test where present.  (Issue #11.)
+- Noted in {{verifiable}} that the authority and integrity limbs of verifiability are separable.  (Issue #11.)
 
 ## Since draft-vaughan-machine-readability-00
 {:numbered="false"}
