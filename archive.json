@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-04T03:21:24.815037+00:00",
+  "timestamp": "2026-08-25T01:40:55.436987+00:00",
   "repo": "thunderpoot/readability-draft",
   "labels": [
     {
@@ -368,6 +368,22 @@
           "updatedAt": "2026-08-03T11:35:17Z"
         }
       ]
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOTI7wBc8AAAABN_Tj0w",
+      "title": "Great contribution - wonder whether actionability could be explored further",
+      "url": "https://github.com/thunderpoot/readability-draft/issues/15",
+      "state": "OPEN",
+      "author": "croesus",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "In Icebreaker One's work on [trust frameworks and registries](https://ib1.org/trust-services/) we lean heavily on \"machine readability\" as a goal, and, like others, are guilty of leaving it only vaguely-defined. Consequently this work is very much appreciated.\n\nTrust frameworks seek to maximise the \"score\" for machine-readability on all the intrinsic and extrinsic dimensions you specify, in a way that can be monitored. They set the conformance threshold that this framework avoids. It would be interesting to explore a scoring system for how completely a trust framework achieves this against the dimensions. Did you start to think along these lines as you constructed the survey section?\n\nLike you, we observe that the Agent decision \"can I do thing X with this resource?\" can only be couched in the context of the Agent, not the Declaring Party. Where the Expression relates to assurance, the decision is not necessarily \"am I allowed to do X?\" but \"can I rely on the Resource enough to do X?\". I wonder whether this distinction (permission vs assurance) is worth highlighting, as assurance relates to the verifiability dimension as well.\n\nOne more detailed point: \"conforming Agent\" is used in the document but it's unclear to me what the Agent is conforming to. Should this be a defined term?",
+      "createdAt": "2026-08-24T10:36:30Z",
+      "updatedAt": "2026-08-24T10:36:30Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
