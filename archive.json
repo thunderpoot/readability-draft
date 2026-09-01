@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-25T01:40:55.436987+00:00",
+  "timestamp": "2026-09-01T04:43:45.436748+00:00",
   "repo": "thunderpoot/readability-draft",
   "labels": [
     {
@@ -381,9 +381,17 @@
       "labels": [],
       "body": "In Icebreaker One's work on [trust frameworks and registries](https://ib1.org/trust-services/) we lean heavily on \"machine readability\" as a goal, and, like others, are guilty of leaving it only vaguely-defined. Consequently this work is very much appreciated.\n\nTrust frameworks seek to maximise the \"score\" for machine-readability on all the intrinsic and extrinsic dimensions you specify, in a way that can be monitored. They set the conformance threshold that this framework avoids. It would be interesting to explore a scoring system for how completely a trust framework achieves this against the dimensions. Did you start to think along these lines as you constructed the survey section?\n\nLike you, we observe that the Agent decision \"can I do thing X with this resource?\" can only be couched in the context of the Agent, not the Declaring Party. Where the Expression relates to assurance, the decision is not necessarily \"am I allowed to do X?\" but \"can I rely on the Resource enough to do X?\". I wonder whether this distinction (permission vs assurance) is worth highlighting, as assurance relates to the verifiability dimension as well.\n\nOne more detailed point: \"conforming Agent\" is used in the document but it's unclear to me what the Agent is conforming to. Should this be a defined term?",
       "createdAt": "2026-08-24T10:36:30Z",
-      "updatedAt": "2026-08-24T10:36:30Z",
+      "updatedAt": "2026-08-31T18:00:07Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thunderpoot",
+          "authorAssociation": "OWNER",
+          "body": "Thank you @croesus, this is really helpful.\n\nOn scoring / thresholds, something close to that was in -00, which framed the properties as a \"ladder\", but it was dropped after IETF 126 because the properties came apart rather than stacked. I think the score you're describing is something that can work on top of this, taking the profile as its input. The refusal to set a threshold is about not fixing one in the abstract, since which properties are needed just depends on the decision. A trust framework that has fixed its decisions is exactly the party that can then state requirements. I'll make that explicit, as the section currently reads as a broader prohibition than intended.\n\nOne thing worth noting for your case is that the properties attach to Expressions, and a Mechanism is only assessed through what its Expressions actually provide, so a framework permitting signatures says nothing about whether a given participant signed.\n\nOn permission versus assurance: yes agreed, and the actionability definition is currently too narrow. Where an Expression asserts a fact rather than a rule, the question is basically reliance, not authorisation, so verifiability bears on actionability directly, since an assurance is only really worth what its source is worth. I'll widen the definition in -02 and say so.\n\nOn \"conforming Agent\": good point, it should be defined. The thing conformed to is the Mechanism, and the draft doesn't say that.\n\nAll of these are tracked for -02, and I'll leave this issue open for comment until then. I'm aiming to have the next iteration ready some time around IETF 127 (so late November, realistically).",
+          "createdAt": "2026-08-31T18:00:07Z",
+          "updatedAt": "2026-08-31T18:00:07Z"
+        }
+      ]
     }
   ],
   "pulls": [
